@@ -25,8 +25,7 @@ ui.setAsynchronousImagesLoading(true)
 local image_0_source = 'https://i.imgur.com/dzGI0iP.png'
 local image_1_source = 'https://i.imgur.com/87IMfDa.png'
 
-aspect_ratio = ui.imageSize(image_1_source).x / ui.imageSize(image_1_source).y
-
+local aspect_ratio = ui.imageSize(image_1_source).x / ui.imageSize(image_1_source).y
 
 -------------------------------------------------------------------
 local function loadImageMeta()
