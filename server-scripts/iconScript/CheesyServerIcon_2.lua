@@ -22,7 +22,7 @@ ui.setAsynchronousImagesLoading(true)
 --Image Config table that is used by the script. 
 --Duplicate the entire table and increment the numbers by 1.
 --Follow the example from image_0 and image_1 to get an understanding of how it works.
-local image_0_source = 'https://i.imgur.com/0zam0R0.gif'
+local image_0_source = 'https://i.imgur.com/dzGI0iP.png'
 local image_1_source = ''
 
 -------------------------------------------------------------------
@@ -36,7 +36,7 @@ local function loadImageMeta()
         ['sizeY'] = ui.imageSize(image_0_source).y / 2,
         ['paddingX'] = 10,
         ['paddingY'] = 10,
-        ['scale'] = 0.025}
+        ['scale'] = 0.05}
 
 
         image_1 = {
