@@ -23,7 +23,7 @@ ui.setAsynchronousImagesLoading(true)
 --Duplicate the entire table and increment the numbers by 1.
 --Follow the example from image_0 and image_1 to get an understanding of how it works.
 local image_0_source = 'https://i.imgur.com/dzGI0iP.png'
-local image_1_source = 'https://i.imgur.com/bHDDx7N.png'
+local image_1_source = 'https://i.imgur.com/8M8QLOB.png'
 
 -------------------------------------------------------------------
 local function loadImageMeta()
@@ -45,7 +45,7 @@ local function loadImageMeta()
         ['sizeY'] = ui.imageSize(image_1_source).y,
         ['paddingX'] = 0,
         ['paddingY'] = 0,
-        ['scale'] = 0.05}
+        ['scale'] = 1}
 
 
 -------------------------------------------------------------------
@@ -188,7 +188,7 @@ function script.drawUI()
 
 
     positionImage(image_0, 'top_left', debugImage)
-    positionImage(image_1, 'top_center', debugImage)
+    positionImage(image_1, 'top_left', debugImage)
 
 
 --DO NOT forget the final "end" over here, otherwise it will not work.
