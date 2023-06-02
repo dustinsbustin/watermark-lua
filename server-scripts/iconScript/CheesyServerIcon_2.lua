@@ -22,7 +22,7 @@ ui.setAsynchronousImagesLoading(true)
 --Image Config table that is used by the script. 
 --Duplicate the entire table and increment the numbers by 1.
 --Follow the example from image_0 and image_1 to get an understanding of how it works.
-local image_0_source = 'https://i.imgur.com/1zKQXKK.png'
+local image_0_source = 'https://i.imgur.com/1kU63MV.png'
 local image_1_source = ''
 
 -------------------------------------------------------------------
@@ -36,7 +36,7 @@ local function loadImageMeta()
         ['sizeY'] = ui.imageSize(image_0_source).y,
         ['paddingX'] = 10,
         ['paddingY'] = 10,
-        ['scale'] = 0.2}
+        ['scale'] = 0.5}
 
 
         image_1 = {
@@ -170,7 +170,7 @@ function script.drawUI()
     if creditTimer > 0 then
         display.rect({ pos = vec2(screensize.x/2-120, creditPos-5), size = vec2(240,40), color = rgbm(0,0,0,0.5)})
         display.text({
-            text = '',
+            text = 'Server Icon Script v'..scriptVersion..'\n    by CheesyManiac',
             pos = vec2((screensize.x/2)-92, creditPos),
             letter = vec2(8, 16),
             font = 'aria',
@@ -187,7 +187,8 @@ function script.drawUI()
 -------------------------------------------------------------------
 
 
-    positionImage(image_0, 'bottom_left', debugImage)
+    positionImage(image_0, 'center_left', debugImage)
+    positionImage(image_0, 'center_center', debugImage)
 
 
 --DO NOT forget the final "end" over here, otherwise it will not work.
