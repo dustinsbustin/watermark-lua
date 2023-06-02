@@ -36,7 +36,7 @@ local function loadImageMeta()
         ['sizeY'] = ui.imageSize(image_0_source).y,
         ['paddingX'] = 10,
         ['paddingY'] = 10,
-        ['scale'] = 0.5}
+        ['scale'] = 0.2}
 
 
         image_1 = {
@@ -150,7 +150,7 @@ ui.registerOnlineExtra(ui.Icons.Bug, "Server Icon Debug", function () return tru
 -------------------------------------------------------------------
 
 
-    positionImage(image_0, 'bottom_left', debugImage)
+    positionImage(image_0, 'center_left', debugImage)
 
 
 --DO NOT forget the final "end" over here, otherwise it will not work.
