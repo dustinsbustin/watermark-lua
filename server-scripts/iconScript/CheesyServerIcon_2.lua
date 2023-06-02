@@ -36,7 +36,7 @@ local function loadImageMeta()
         ['sizeY'] = ui.imageSize(image_0_source).y,
         ['paddingX'] = 10,
         ['paddingY'] = 10,
-        ['scale'] = 0.5}
+        ['scale'] = 0.2}
 
 
         image_1 = {
@@ -170,7 +170,7 @@ function script.drawUI()
     if creditTimer > 0 then
         display.rect({ pos = vec2(screensize.x/2-120, creditPos-5), size = vec2(240,40), color = rgbm(0,0,0,0.5)})
         display.text({
-            text = 'Server Icon Script v'..scriptVersion..'\n    by CheesyManiac',
+            text = '',
             pos = vec2((screensize.x/2)-92, creditPos),
             letter = vec2(8, 16),
             font = 'aria',
@@ -187,8 +187,7 @@ function script.drawUI()
 -------------------------------------------------------------------
 
 
-    positionImage(image_0, 'center_left', debugImage)
-    positionImage(image_0, 'center_center', debugImage)
+    positionImage(image_0, 'top_left', debugImage)
 
 
 --DO NOT forget the final "end" over here, otherwise it will not work.
