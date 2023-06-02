@@ -23,7 +23,7 @@ ui.setAsynchronousImagesLoading(true)
 --Duplicate the entire table and increment the numbers by 1.
 --Follow the example from image_0 and image_1 to get an understanding of how it works.
 local image_0_source = 'https://i.imgur.com/dzGI0iP.png'
-local image_1_source = 'https://i.imgur.com/87IMfDa.png'
+local image_1_source = 'https://i.imgur.com/Vs2dSS7.png'
 
 -------------------------------------------------------------------
 local function loadImageMeta()
