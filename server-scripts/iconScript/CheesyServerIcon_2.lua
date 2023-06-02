@@ -104,7 +104,7 @@ local function positionImage(image, position, debug, scaleOverride)
             display.image({
                 image = image.src,
                 pos = pos[position],
-                size = vec2(image.sizeX, image.sizeY) * image.scale,
+                size = vec2(screensize.x, image.sizeX / (ui.imageSize(image.src).x / ui.imageSize(image.src).y)) * image.scale,
                 color = rgbm.colors.white, uvStart = vec2(0, 0),uvEnd = vec2(1, 1)
             })
         elseif scaleOverride == nil or scaleOverride == 0 then
@@ -132,7 +132,7 @@ local function positionImage(image, position, debug, scaleOverride)
             display.image({
                 image = image.src,
                 pos = pos[position],
-                size = vec2(image.sizeX, image.sizeY) * image.scale,
+                size = vec2(screensize.x, image.sizeX / (ui.imageSize(image.src).x / ui.imageSize(image.src).y)) * image.scale,
                 color = rgbm.colors.white, uvStart = vec2(0, 0),uvEnd = vec2(1, 1)
             })
         end
