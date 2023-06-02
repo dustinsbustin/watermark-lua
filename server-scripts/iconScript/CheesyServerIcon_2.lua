@@ -36,7 +36,7 @@ local function loadImageMeta()
         ['sizeY'] = ui.imageSize(image_0_source).y,
         ['paddingX'] = 10,
         ['paddingY'] = 10,
-        ['scale'] = 0.1}
+        ['scale'] = 0.5}
 
 
         image_1 = {
@@ -139,47 +139,10 @@ local function positionImage(image, position, debug, scaleOverride)
 
 end
 
-local creditTimer = 10
-local creditPos = 0
-function script.update(dt)
-    ac.debug('Driver In Setup Menu', ac.getSim().isInMainMenu)
-    if not ac.getSim().isInMainMenu then
-        local a = 2
-        local b = 10
-        if creditTimer >= 0 then
-            creditTimer = creditTimer - (dt)
-        end
-        creditPos = (-0.01*b^(-a*creditTimer+math.log(500)/math.log(b)) + 2)*20
-    end
-    --ac.debug('creditPos', creditPos)
-    ac.debug('creditTimer', creditTimer)
-    --ac.debug("image_0_source", image_0_source)
-    --ac.debug("image_1_source", image_1_source)
-    ac.debug('imageMetaLoaded', imageMetaLoaded)
-    --ac.debug("imageready",ui.isImageReady(image_0_source))
-    loadImageMeta() 
-end
-
 ui.registerOnlineExtra(ui.Icons.Bug, "Server Icon Debug", function () return true end, function () 
         if ui.checkbox("Draw Image Boundary Boxes", debugImage) then debugImage = not debugImage end
         if ui.checkbox("Draw Screen Center Lines", debugLines) then debugLines = not debugLines end
     end, function (okClicked) end,ui.OnlineExtraFlags.Admin)
-
-
-function script.drawUI()
-    if creditTimer > 0 then
-        display.rect({ pos = vec2(screensize.x/2-120, creditPos-5), size = vec2(240,40), color = rgbm(0,0,0,0.5)})
-        display.text({
-            text = 'Welcome to NHD\nServer: VIP',
-            pos = vec2((screensize.x/2)-92, creditPos),
-            letter = vec2(8, 16),
-            font = 'aria',
-            color = rgbm.colors.white
-          })
-    end
-    if debugLines then
-        drawdebugLines()
-    end
 
 -------------------------------------------------------------------
 -------------ADD YOUR ADDITIONAL IMAGES UNDER HERE,----------------
