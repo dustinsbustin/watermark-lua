@@ -25,6 +25,9 @@ ui.setAsynchronousImagesLoading(true)
 local image_0_source = 'https://i.imgur.com/dzGI0iP.png'
 local image_1_source = 'https://i.imgur.com/87IMfDa.png'
 
+aspect_ratio = ui.imageSize(image_1_source).x / ui.imageSize(image_1_source).y
+
+
 -------------------------------------------------------------------
 local function loadImageMeta()
     if imageMetaLoaded <  3 then
@@ -37,12 +40,12 @@ local function loadImageMeta()
         ['paddingX'] = 10,
         ['paddingY'] = 10,
         ['scale'] = 0.025}
-
+    
 
         image_1 = {
         ['src'] = ui.GIFPlayer(image_1_source),
         ['sizeX'] = screensize.x,
-        ['sizeY'] = ui.imageSize(image_1_source).y,
+        ['sizeY'] = screensize.x / aspect_ratio,
         ['paddingX'] = 0,
         ['paddingY'] = 0,
         ['scale'] = 1}
