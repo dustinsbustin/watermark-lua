@@ -25,7 +25,8 @@ ui.setAsynchronousImagesLoading(true)
 local image_0_source = 'https://i.imgur.com/dzGI0iP.png'
 --local image_1_source = 'https://i.imgur.com/Vs2dSS7.png' -- Straight NHD
 --local image_1_source = 'https://i.imgur.com/YcSAe8o.png' -- Slanted NHD
-local image_1_source = 'https://i.imgur.com/cQ5nt5G.png' -- Slanted NHD with socials
+--local image_1_source = 'https://i.imgur.com/cQ5nt5G.png' -- Slanted NHD with socials bottom left
+local image_1_source = 'https://i.imgur.com/qxzxeN9.png' -- Slanted NHD with socials top center
 
 -------------------------------------------------------------------
 local function loadImageMeta()
