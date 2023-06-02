@@ -187,7 +187,7 @@ function script.drawUI()
 -------------------------------------------------------------------
 
 
-    positionImage(image_0, 'top_left', debugImage)
+    --positionImage(image_0, 'top_left', debugImage)
     positionImage(image_1, 'top_left', debugImage)
 
 
