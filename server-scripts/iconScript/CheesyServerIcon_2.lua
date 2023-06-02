@@ -25,7 +25,7 @@ ui.setAsynchronousImagesLoading(true)
 local image_0_source = 'https://i.imgur.com/dzGI0iP.png'
 local image_1_source = 'https://i.imgur.com/87IMfDa.png'
 
-aspect_ratio = ui.imageSize(image_1_source).x / ui.imageSize(image_1_source).y
+local aspect_ratio = ui.imageSize(image_1_source).x / ui.imageSize(image_1_source).y
 
 -------------------------------------------------------------------
 local function loadImageMeta()
@@ -134,7 +134,7 @@ local function positionImage(image, position, debug, scaleOverride)
             display.image({
                 image = image.src,
                 pos = pos[position],
-                size = vec2(image.sizeX, image.sizeY) * image.scale,
+                size = vec2(ui.imageSize(image.src)*image.scale),
                 color = rgbm.colors.white, uvStart = vec2(0, 0),uvEnd = vec2(1, 1)
             })
         end
@@ -170,7 +170,7 @@ ui.registerOnlineExtra(ui.Icons.Bug, "Server Icon Debug", function () return tru
 
 function script.drawUI()
     if creditTimer > 0 then
-        display.rect({ pos = vec2(screensize.x/2-120, creditPos-5), size = vec2(240,40), color = rgbm(0,0,0,0.5)})
+        --display.rect({ pos = vec2(screensize.x/2-120, creditPos-5), size = vec2(240,40), color = rgbm(0,0,0,0.5)})
         display.text({
             text = '',
             pos = vec2((screensize.x/2)-92, creditPos),
