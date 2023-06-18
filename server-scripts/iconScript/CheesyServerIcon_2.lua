@@ -36,10 +36,8 @@ local function loadImageMeta()
 
         image_0 = {
         ['src'] = ui.GIFPlayer(image_0_source),
-        --['sizeX'] = ui.imageSize(image_0_source).x / 2,
-        --['sizeY'] = ui.imageSize(image_0_source).y / 2,
-        ['sizeX'] = screensize.x / 2560 * 100, -- Adjust the size based on the screen width
-        ['sizeY'] = screensize.y / 1440 * 100, -- Adjust the size based on the screen height
+        ['sizeX'] = ui.imageSize(image_0_source).x / 2,
+        ['sizeY'] = ui.imageSize(image_0_source).y / 2,
         ['paddingX'] = 10,
         ['paddingY'] = 10,
         ['scale'] = 0.025}
@@ -107,21 +105,15 @@ local function positionImage(image, position, debug, scaleOverride)
                 end
             end
         
-            --display.image({
-            --    image = image.src,
-            --    pos = pos[position],
-            --    size = vec2(screensize.x, image.sizeX / (ui.imageSize(image.src).x / ui.imageSize(image.src).y)) * image.scale,
-            --    color = rgbm.colors.white, uvStart = vec2(0, 0),uvEnd = vec2(1, 1)
-            --})
-
             display.image({
                 image = image.src,
                 pos = pos[position],
-                size = vec2(screensize.x, image.sizeX / ui.imageSize(image.src).x * image.scale),
+                size = vec2(screensize.x, image.sizeX / (ui.imageSize(image.src).x / ui.imageSize(image.src).y)) * image.scale,
                 color = rgbm.colors.white,
                 uvStart = vec2(0, 0),
                 uvEnd = vec2(1, 1)
             })
+        
         elseif scaleOverride == nil or scaleOverride == 0 then
             pos = {
                 ['top_left'] =      vec2(image.paddingX,image.paddingY),
@@ -144,17 +136,10 @@ local function positionImage(image, position, debug, scaleOverride)
                 end
             end
         
-            --display.image({
-            --    image = image.src,
-            --    pos = pos[position],
-            --    size = vec2(screensize.x, image.sizeX / (ui.imageSize(image.src).x / ui.imageSize(image.src).y)) * image.scale,
-            --    color = rgbm.colors.white, uvStart = vec2(0, 0),uvEnd = vec2(1, 1)
-            --})
-
             display.image({
                 image = image.src,
                 pos = pos[position],
-                size = vec2(screensize.x, image.sizeX / ui.imageSize(image.src).x * image.scale),
+                size = vec2(screensize.x, image.sizeX / (ui.imageSize(image.src).x / ui.imageSize(image.src).y)) * image.scale,
                 color = rgbm.colors.white,
                 uvStart = vec2(0, 0),
                 uvEnd = vec2(1, 1)
