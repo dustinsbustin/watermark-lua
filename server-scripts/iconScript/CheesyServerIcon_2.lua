@@ -22,26 +22,23 @@ ui.setAsynchronousImagesLoading(true)
 
 --Image Config table that is used by the script. 
 --Duplicate the entire table and increment the numbers by 1.
---Follow the example from image_0 and image_1 to get an understanding of how it works.
-local image_0_source = 'https://i.imgur.com/dzGI0iP.png'
---local image_1_source = 'https://i.imgur.com/Vs2dSS7.png' -- Straight NHD
-local image_1_source = 'https://i.imgur.com/YcSAe8o.png' -- Slanted NHD
---local image_1_source = 'https://i.imgur.com/cQ5nt5G.png' -- Slanted NHD with socials bottom left
---local image_1_source = 'https://i.imgur.com/qxzxeN9.png' -- Slanted NHD with socials top center
+--local image_1_source = 'https://nhd.gg/img/nhd_wm_.png' -- Slanted NHD
+
+local image_1_source = ''
+local screenWidth = ac.getSim().windowWidth
+
+if screenWidth >= 2560 then
+    image_1_source = 'https://nhd.gg/img/nhd_wm_2160.png' -- Use the 4K image for screen width 2560 or higher
+elseif screenWidth >= 1440 then
+    image_1_source = 'https://nhd.gg/img/nhd_wm_1440.png' -- Use the 1440p image for screen width 1920 or higher
+else
+    image_1_source = 'https://nhd.gg/img/nhd_wm_1080.png' -- Use the 1080p image for all other screen widths
+end
 
 -------------------------------------------------------------------
 local function loadImageMeta()
     if imageMetaLoaded <  3 then
 -------------------------------------------------------------------
-
-        image_0 = {
-        ['src'] = ui.GIFPlayer(image_0_source),
-        ['sizeX'] = ui.imageSize(image_0_source).x / 2,
-        ['sizeY'] = ui.imageSize(image_0_source).y / 2,
-        ['paddingX'] = 10,
-        ['paddingY'] = 10,
-        ['scale'] = 0.025}
-    
 
         image_1 = {
         ['src'] = ui.GIFPlayer(image_1_source),
@@ -108,7 +105,8 @@ local function positionImage(image, position, debug, scaleOverride)
             display.image({
                 image = image.src,
                 pos = pos[position],
-                size = vec2(screensize.x, image.sizeX / (ui.imageSize(image.src).x / ui.imageSize(image.src).y)) * image.scale,
+                --size = vec2(screensize.x, image.sizeX / (ui.imageSize(image.src).x / ui.imageSize(image.src).y)) * image.scale,
+                size = vec2(ui.imageSize(image.src).x / (ui.imageSize(image.src).x / ui.imageSize(image.src).y)) * image.scale,
                 color = rgbm.colors.white,
                 uvStart = vec2(0, 0),
                 uvEnd = vec2(1, 1)
@@ -139,7 +137,8 @@ local function positionImage(image, position, debug, scaleOverride)
             display.image({
                 image = image.src,
                 pos = pos[position],
-                size = vec2(screensize.x, image.sizeX / (ui.imageSize(image.src).x / ui.imageSize(image.src).y)) * image.scale,
+                --size = vec2(screensize.x, image.sizeX / (ui.imageSize(image.src).x / ui.imageSize(image.src).y)) * image.scale,
+                size = vec2(ui.imageSize(image.src).x / (ui.imageSize(image.src).x / ui.imageSize(image.src).y)) * image.scale,
                 color = rgbm.colors.white,
                 uvStart = vec2(0, 0),
                 uvEnd = vec2(1, 1)
@@ -162,10 +161,8 @@ function script.update(dt)
     end
     --ac.debug('creditPos', creditPos)
     ac.debug('creditTimer', creditTimer)
-    --ac.debug("image_0_source", image_0_source)
     --ac.debug("image_1_source", image_1_source)
     ac.debug('imageMetaLoaded', imageMetaLoaded)
-    --ac.debug("imageready",ui.isImageReady(image_0_source))
     loadImageMeta() 
 end
 
@@ -195,8 +192,6 @@ function script.drawUI()
 ----------------SO THAT THEY ARE DRAWN ON SCREEN-------------------
 -------------------------------------------------------------------
 
-
-    --positionImage(image_0, 'top_left', debugImage)
     positionImage(image_1, 'top_left', debugImage)
 
 
