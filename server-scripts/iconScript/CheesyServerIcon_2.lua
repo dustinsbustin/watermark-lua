@@ -43,7 +43,7 @@ local function loadImageMeta()
         image_1 = {
         ['src'] = ui.GIFPlayer(image_1_source),
         ['sizeX'] = screensize.x,
-        ['sizeY'] = screensize.x / ui.imageSize(image_1_source).x / ui.imageSize(image_1_source).y,
+        ['sizeY'] = screensize.y,
         ['paddingX'] = 0,
         ['paddingY'] = 0,
         ['scale'] = 1}
@@ -106,7 +106,7 @@ local function positionImage(image, position, debug, scaleOverride)
                 image = image.src,
                 pos = pos[position],
                 --size = vec2(screensize.x, image.sizeX / (ui.imageSize(image.src).x / ui.imageSize(image.src).y)) * image.scale,
-                size = vec2(ui.imageSize(image.src).x / (ui.imageSize(image.src).x / ui.imageSize(image.src).y)) * image.scale,
+                size = vec2(ui.imageSize(image.src).x, ui.imageSize(image.src).y) * image.scale,
                 color = rgbm.colors.white,
                 uvStart = vec2(0, 0),
                 uvEnd = vec2(1, 1)
@@ -138,7 +138,7 @@ local function positionImage(image, position, debug, scaleOverride)
                 image = image.src,
                 pos = pos[position],
                 --size = vec2(screensize.x, image.sizeX / (ui.imageSize(image.src).x / ui.imageSize(image.src).y)) * image.scale,
-                size = vec2(ui.imageSize(image.src).x / (ui.imageSize(image.src).x / ui.imageSize(image.src).y)) * image.scale,
+                size = vec2(ui.imageSize(image.src).x, ui.imageSize(image.src).y) * image.scale,
                 color = rgbm.colors.white,
                 uvStart = vec2(0, 0),
                 uvEnd = vec2(1, 1)
