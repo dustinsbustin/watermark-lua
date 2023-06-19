@@ -14,7 +14,6 @@ ac.debug("1. Cheesy Icon Script", 'v'..scriptVersion)
 ac.debug("2. Original Source: ", "https://github.com/CheesyManiac/")
 
 local screensize = vec2(ac.getSim().windowWidth,ac.getSim().windowHeight)
-local screensize = vec2(ac.getSim().windowWidth,ac.getSim().windowHeight)
 local debugFlash, debugImage, debugLines,imageMetaLoaded = false, false, false, 0
 setInterval(function ()debugFlash = not debugFlash end, 0.5)
 ui.setAsynchronousImagesLoading(true)
