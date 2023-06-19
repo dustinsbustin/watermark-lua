@@ -192,7 +192,4 @@ function script.drawUI()
 -------------------------------------------------------------------
 
     positionImage(image_1, 'top_left', debugImage)
-
-
---DO NOT forget the final "end" over here, otherwise it will not work.
 end
