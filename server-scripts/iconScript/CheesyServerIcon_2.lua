@@ -27,7 +27,7 @@ ui.setAsynchronousImagesLoading(true)
 local image_1_source = ''
 local screenWidth = ac.getSim().windowWidth
 
-if screenWidth >= 2560 then
+if screenWidth >= 2160 then
     image_1_source = 'https://nhd.gg/img/nhd_wm_2160.png' -- Use the 4K image for screen width 2560 or higher
 elseif screenWidth >= 1440 then
     image_1_source = 'https://nhd.gg/img/nhd_wm_1440.png' -- Use the 1440p image for screen width 1920 or higher
